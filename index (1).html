@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Typing Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+        .message {
+            font-size: 24px;
+            color: #e60073;
+        }
+        .typing {
+            font-size: 18px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="typing">Typing...</p>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        const message = "Happy Valentine's Day 💖 Tum meri zindagi ka sabse khoobsurat hissa ho! 💕";
+        let i = 0;
+        function typeMessage() {
+            if (i < message.length) {
+                document.getElementById("message").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeMessage, 100); // Typing speed
+            } else {
+                document.querySelector(".typing").style.display = "none";
+            }
+        }
+        setTimeout(typeMessage, 2000); // Delay before typing starts
+    </script>
+</body>
+</html>
